@@ -60,11 +60,9 @@
 #include "set-op-vector-bag.cpp"
 
 #if !SKIP_TESTING_TASK_5
-
 using csc232::Bag;
 using csc232::VectorBag;
 using csc232::SetOpVectorBag;
-
 #endif
 
 // Declare template usage to inform compiler what code to actually implement for the template
