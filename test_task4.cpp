@@ -14,7 +14,7 @@
 #include "doctest.h"
 #include "csc232.h"
 
-#if SKIP_TESTING_TASK_5
+#if !SKIP_TESTING_TASK_5
 using csc232::SetOpVectorBag;
 #endif
 using std::string;
@@ -27,6 +27,7 @@ TEST_SUITE("Difference Test Suite"
     {
         GIVEN( "Two SetOpVectorBags as configured in the exercises" )
         {
+#if !SKIP_TESTING_TASK_4
             SetOpVectorBag<string> a{ };
             a.add( "a" );
             a.add( "b" );
@@ -67,6 +68,7 @@ TEST_SUITE("Difference Test Suite"
                     REQUIRE_EQ( expected_freq_e, actual_freq_e );
                 }
             }
+#endif
         }
     }
 }

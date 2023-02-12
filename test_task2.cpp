@@ -14,7 +14,7 @@
 #include "csc232.h"
 #include "doctest.h"
 
-#if SKIP_TESTING_TASK_5
+#if !SKIP_TESTING_TASK_5
 using csc232::SetOpVectorBag;
 #endif
 
@@ -28,6 +28,7 @@ TEST_SUITE("Union Test Suite"
     {
         GIVEN( "Two SetOpVectorBags as configured in the exercises" )
         {
+#if !SKIP_TESTING_TASK_4
             SetOpVectorBag<string> a{ };
             a.add( "a" );
             a.add( "b" );
@@ -68,6 +69,7 @@ TEST_SUITE("Union Test Suite"
                     REQUIRE_EQ( expected_freq_e, actual_freq_e );
                 }
             }
+#endif
         }
     }
 }
