@@ -147,7 +147,7 @@ Now on to the steps to take for this task.
    };
    ```
 
-2. When you have completed this task, toggle the `SKIP_TESTING_TASK_1` macro from `TRUE` to `FALSE`.
+2. When you have completed this task, open the `csc232.h` header file and toggle the `SKIP_TESTING_TASK_1` macro from `TRUE` to `FALSE`.
 3. Build and execute the `test_task1` target to test your solution (or run `ctest`).
 4. When all the tests for this task pass, commit and push your changes to
    GitHub.
@@ -228,7 +228,7 @@ Let's get started on this task:
    };
    ```
 2. Now open the `set-op-vector-bag.cpp` source file and implement this method using the skeleton presented in the task discussion above.
-3. When you have completed this task, toggle the `SKIP_TESTING_TASK_2` macro from `TRUE` to `FALSE`.
+3. When you have completed this task, open the `csc232.h` header file and toggle the `SKIP_TESTING_TASK_2` macro from `TRUE` to `FALSE`.
 4. Build and execute the `test_task2` target to test your solution (or run `ctest`).
 5. When all the tests for this task pass, commit and push your changes to GitHub.
 
@@ -311,7 +311,7 @@ Let's get started on this task:
    };
    ```
 2. Now open the `set-op-vector-bag.cpp` source file and implement this method using the skeleton presented in the task discussion above.
-3. When you have completed this task, toggle the `SKIP_TESTING_TASK_3` macro from `TRUE` to `FALSE`.
+3. When you have completed this task, open the `csc232.h` header file and toggle the `SKIP_TESTING_TASK_3` macro from `TRUE` to `FALSE`.
 4. Build and execute the `test_task3` target to test your solution (or run `ctest`).
 5. When all the tests for this task pass, commit and push your changes to GitHub.
 
@@ -396,7 +396,7 @@ Let's get started on this task:
    };
    ```
 2. Now open the `set-op-vector-bag.cpp` source file and implement this method using the skeleton presented in the task discussion above.
-3. When you have completed this task, toggle the `SKIP_TESTING_TASK_4` macro from `TRUE` to `FALSE`.
+3. When you have completed this task, open the `csc232.h` header file and toggle the `SKIP_TESTING_TASK_4` macro from `TRUE` to `FALSE`.
 4. Build and execute the `test_task4` target to test your solution (or run `ctest`).
 5. When all the tests for this task pass, commit and push your changes to GitHub.
 
@@ -454,8 +454,9 @@ Foo bar{ }; // creates an instance of csc232::Foo named bar
    using csc232::SetOpVectorBag;
    ```
    
-6. Build and execute the `test_task5` target to test your solution (or run `ctest`).
-7. When all the tests for this task pass, commit and push your changes to GitHub.
+6. When you have completed this task, open the `csc232.h` header file and toggle the `SKIP_TESTING_TASK_5` macro from `TRUE` to `FALSE`.
+7. Build and execute the `test_task5` target to test your solution (or run `ctest`).
+8. When all the tests for this task pass, commit and push your changes to GitHub.
 
 ## Submission Details
 
