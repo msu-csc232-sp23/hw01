@@ -28,7 +28,7 @@ TEST_SUITE("Union Test Suite"
     {
         GIVEN( "Two SetOpVectorBags as configured in the exercises" )
         {
-#if !SKIP_TESTING_TASK_4
+#if !SKIP_TESTING_TASK_2
             SetOpVectorBag<string> a{ };
             a.add( "a" );
             a.add( "b" );

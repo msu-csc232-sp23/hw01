@@ -27,7 +27,7 @@ TEST_SUITE("Intersection Test Suite"
     {
         GIVEN( "Two SetOpVectorBags as configured in the exercises" )
         {
-#if !SKIP_TESTING_TASK_4
+#if !SKIP_TESTING_TASK_3
             SetOpVectorBag<string> a{ };
             a.add( "a" );
             a.add( "b" );
