@@ -2,9 +2,9 @@
  * CSC232 - Data Structures
  * Missouri State University
  *
- * @file    test_task2.cpp
+ * @file    test_task3.cpp
  * @author  Jim Daehn <jdaehn@missouristate.edu>
- * @brief   Test suite to validate task 2 of this assignment.
+ * @brief   Test suite to validate task 3 of this assignment.
  * @version v2022.12.26
  * @date    Spring 2023
  */
@@ -19,11 +19,11 @@ using csc232::SetOpVectorBag;
 #endif
 using std::string;
 
-TEST_SUITE("Intersection Test Suite"
-           * doctest::description("A suite of tests for the intersection operation")
-           * doctest::skip( SKIP_TESTING_TASK_3 ) )
+TEST_SUITE("Difference Test Suite"
+           * doctest::description("A suite of tests for the difference operation")
+           * doctest::skip( SKIP_TESTING_TASK_4 ) )
 {
-    SCENARIO("Testing the intersection of two bags")
+    SCENARIO("Testing the differnce of two bags")
     {
         GIVEN( "Two SetOpVectorBags as configured in the exercises" )
         {
@@ -39,19 +39,19 @@ TEST_SUITE("Intersection Test Suite"
             b.add( "d" );
             b.add( "e" );
 
-            WHEN( "I examine the the intersection between the two bags a and b" )
+            WHEN( "I examine the the difference between the two bags a and b" )
             {
-                SetOpVectorBag<string> result{ a.intersectionWith( b ) };
+                SetOpVectorBag<string> result{ a.differenceWith( b ) };
 
-                THEN( "I expect the result to contain items found only in both a and b" )
+                THEN( "I expect the result to contain items found in a that are not in b" )
                 {
-                    size_t expected_size{ 1 };
+                    size_t expected_size{ 2 };
                     size_t actual_size{ result.toVector( ).size( ) };
                     REQUIRE_EQ( expected_size, actual_size );
 
-                    int expected_freq_a{ 0 };
-                    int expected_freq_b{ 1 };
-                    int expected_freq_c{ 0 };
+                    int expected_freq_a{ 1 };
+                    int expected_freq_b{ 0 };
+                    int expected_freq_c{ 1 };
                     int expected_freq_d{ 0 };
                     int expected_freq_e{ 0 };
 

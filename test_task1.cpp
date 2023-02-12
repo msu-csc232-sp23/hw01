@@ -11,49 +11,52 @@
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
-#include "doctest.h"
 #include "csc232.h"
+#include "doctest.h"
 
-TEST_SUITE("Task 1" * doctest::description("A suite of tests for Task 1"))
+#if !SKIP_TESTING_TASK_5
+using csc232::SetOpVectorBag;
+#endif
+
+using std::string;
+
+TEST_SUITE( "Task 1"
+                * doctest::description(
+                    "A suite of tests for task 1: Declare SetOpVectorBag<T> as a subclass of VectorBag<T>" )
+                * doctest::skip( SKIP_TESTING_TASK_1 ))
 {
-    TEST_CASE("Task is ready for evaluation")
+    SCENARIO( "Task is ready for evaluation" )
     {
-        const char* search_string = "TEST_TASK_1 TRUE";
-        const char* filename   = "csc232.h";
-        std::ifstream input_stream{ filename, std::ios::in };
-        if (!input_stream)
+        GIVEN("a class hierarchy to find")
         {
-            FAIL_CHECK("Test source file could not be opened!");
-            exit(EXIT_FAILURE);
-        }
+            const char *search_string = "class SetOpVectorBag : public VectorBag";
+            const char *filename = "set-op-vector-bag.h";
 
-        // Read the entire file into memory
-        std::string file_contents;
-        std::string current_line;
-        while (getline(input_stream, current_line ))
-            file_contents += current_line + '\n';
-        input_stream.close();
+            WHEN("I attempt to access the file it would be declared in")
+            {
+                std::ifstream input_stream{ filename, std::ios::in };
+                THEN("I expect no issues")
+                {
+                    if ( !input_stream )
+                    {
+                        FAIL_CHECK( "Test source file could not be opened!" );
+                        exit( EXIT_FAILURE );
+                    }
+                    AND_THEN("further more, I expect the declaration to exist")
+                    {
+                        // Read the entire file into memory
+                        std::string file_contents;
+                        std::string current_line;
+                        while ( getline( input_stream, current_line ))
+                            file_contents += current_line + '\n';
+                        input_stream.close( );
 
-        size_t pos = file_contents.find(search_string);
-        REQUIRE_MESSAGE((static_cast<int>(pos) > 0), "It appears you have not toggled TEST_TASK_1 from FALSE to TRUE. Please do this before attempt to validate this task.");
-
-        SUBCASE( "Testing some aspect of Task 1" )
-        {
-            CHECK_EQ(factorial(1), 1);
-        }
-
-        SUBCASE("Testing another aspect of Task 1")
-        {
-            CHECK_EQ(factorial(2), 2);
-            CHECK_EQ(factorial(3), 6);
-            CHECK_EQ(factorial(10), 3628800);
-        }
-
-        SUBCASE("Testing negative assertions")
-        {
-            CHECK_NE(factorial(2), 3);
-            CHECK_NE(factorial(3), 7);
-            CHECK_NE(factorial(10), 13628800);
+                        size_t pos = file_contents.find( search_string );
+                        REQUIRE_MESSAGE(( static_cast<int>(pos) > 0 ),
+                                        "It appears you have not declared the SubOpVectorBag class. Please do this before attempt to validate this task." );
+                    }
+                }
+            }
         }
     }
 }
