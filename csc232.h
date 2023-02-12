@@ -12,14 +12,24 @@
 #ifndef CSC232
 #define CSC232
 
+#ifndef FALSE
 #define FALSE 0
+#endif
+
+#ifndef TRUE
 #define TRUE !FALSE
-// Set this macro to the value of TRUE to test Task 1
-#define TEST_TASK_1 FALSE
-// Set this macro to the value of TRUE to test Task 2
-#define TEST_TASK_2 FALSE
-// Set this macro to the value of TRUE to test Task 3
-#define TEST_TASK_3 FALSE
+#endif
+
+// Set this macro to the value of FALSE to test Task 1
+#define SKIP_TESTING_TASK_1 TRUE
+// Set this macro to the value of FALSE to test Task 2
+#define SKIP_TESTING_TASK_2 TRUE
+// Set this macro to the value of FALSE to test Task 3
+#define SKIP_TESTING_TASK_3 TRUE
+// Set this macro to the value of FALSE to test Task 4
+#define SKIP_TESTING_TASK_4 TRUE
+// Set this macro to the value of FALSE to test Task 5
+#define SKIP_TESTING_TASK_5 TRUE
 
 #include <algorithm>
 #include <cassert>
@@ -44,20 +54,24 @@
 #include <utility>
 #include <vector>
 
-/**
- * @brief Calculates the nth factorial number.
- * 
- * @param number the value whose factorial we seek
- * @return the factorial of the given number.
- */
-int factorial(int number);
+// Include template class implementation source files
+#include "bag.h"
+#include "vector-bag.cpp"
+#include "set-op-vector-bag.cpp"
 
-/**
- * @brief A demonstration for how an input file is read.
- *
- * @param file_name the file to opened for processing
- * @return true if the given file was successfully opened, false otherwise.
- */
-bool read_data(const std::string& file_name);
+#if !SKIP_TESTING_TASK_5
+
+using csc232::Bag;
+using csc232::VectorBag;
+using csc232::SetOpVectorBag;
+
+#endif
+
+// Declare template usage to inform compiler what code to actually implement for the template
+template class VectorBag<std::string>;
+
+#if !SKIP_TESTING_TASK_1
+template class SetOpVectorBag<std::string>;
+#endif
 
 #endif
