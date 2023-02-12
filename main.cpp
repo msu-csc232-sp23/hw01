@@ -66,13 +66,13 @@ int main( )
 
 #if !SKIP_TESTING_TASK_3
     std::cout << "intersection of lhs and rhs = ";
-    printBag( ( lhs.intersectionWith( rhs ) ).toVector( ) );
+    printBag( lhs.intersectionWith( rhs ) );
     std::cout << "it should be                = [b]" << std::endl;
 #endif
 
 #if !SKIP_TESTING_TASK_4
     std::cout << "difference of lhs and rhs   = ";
-    printBag( ( lhs.differenceWith( rhs ) ).toVector( ) );
+    printBag( lhs.differenceWith( rhs ) );
     std::cout << "it should be                = [a, c]" << std::endl;
 #endif
 
