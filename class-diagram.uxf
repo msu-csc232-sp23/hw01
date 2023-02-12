@@ -1,0 +1,37 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>160</x><y>40</y><w>240</w><h>180</h></coordinates><panel_attributes>&lt;&lt;thing&gt;&gt;
+/csc232::Bag&lt;T&gt;/
+--
+/+getCurrentSize( ) const: integer/
+/+isEmpty( ) const: boolean/
+/+add( item: const T&amp; ): boolean/
+/+remove( item: const T&amp; ): boolean/
+/+clear( ): void/
+/+getFrequencyOf( target: const T&amp; ): int/
+/+contains( target: const T&amp; ): boolean/
+/+toVector( ) : std::vector&lt;T&gt;/
+/+~Bag( )/
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>590</x><y>270</y><w>160</w><h>30</h></coordinates><panel_attributes>Parameterized by type T
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>50</y><w>220</w><h>250</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;200;230</additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>270</y><w>240</w><h>220</h></coordinates><panel_attributes>&lt;&lt;thing&gt;&gt;
+csc232::VectorBag&lt;T&gt;
+--
+-items: std::vector&lt;T&gt;
+--
++VectorBag( )
++~VectorBag( )
++getCurrentSize( ) const: integer
++isEmpty( ) const: boolean
++add( item: const T&amp; ): boolean
++remove( item: const T&amp; ): boolean
++clear( ): void
++getFrequencyOf( target: const T&amp; ): int
++contains( target: const T&amp; ): boolean
++toVector( ) : std::vector&lt;T&gt;
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>210</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>280</y><w>220</w><h>30</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;200;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>550</y><w>410</w><h>120</h></coordinates><panel_attributes>&lt;&lt;thing&gt;&gt;
+csc232::SetOpVectorBag&lt;T&gt;
+--
++SetOpVectorBag( )
++~SetOpVectorBag( )
++unionWithBag( bag: SetOpVectorBag&lt;T&gt; ): SetOpVectorBag&lt;T&gt;
++intersectionWithBag( bag: SetOpVectorBag&lt;T&gt; ): SetOpVectorBag&lt;T&gt;
++differenceWithBag( bag: SetOpVectorBag&lt;T&gt; ): SetOpVectorBag&lt;T&gt;
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>480</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>290</y><w>130</w><h>300</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;280;110;10</additional_attributes></element></diagram>
