@@ -16,8 +16,5 @@
 // TODO: Task 1, Step 1
 // Declare a class template named SetOpVectorBag that extends
 // the VectorBag class. Use T as the template parameter name.
-template <typename T>
-class SetOpVectorBag : public VectorBag<T>
-{};
 
 #endif //CSC232_SET_OP_VECTOR_BAG_H
