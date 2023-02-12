@@ -105,7 +105,7 @@ the following tasks:
 
 In this task we declare our new subclass of the `VectorBag` class.
 
-#### Discussion
+#### Discussion of Subclasses
 
 This task requires a very specific syntax for a class declaration. The
 following rules **must be** adhered to in order for the first set of unit
@@ -156,7 +156,7 @@ Now on to the steps to take for this task.
 
 In this task, we define the `unionWith()` operation.
 
-#### Discussion
+#### Discussion of the union operation
 
 In this task, we actually set about extending the `VectorBag<T>` template class. We begin with the `unionWith()` operation. Let's discuss the use of this operation first.
 
@@ -205,8 +205,8 @@ SetOpVectorBag<T> SetOpVectorBag<T>::unionWith( SetOpVectorBag<T> rhs )
     // Use bag operations to populate result with appropriate values
     // Note: Directly referring to an inherited operation is invoking the
     // receiver object's method, e.g.,
-    // int size = getCurrentSize(); // this is the size of this bag
-    // int otherSize = rhs.getCurrentSize(); // this is the size of the argument
+    // int size = VectorBag<T>::getCurrentSize(); // this is the size of this bag
+    // int otherSize = rhs.getCurrentSize();      // this is the size of the argument
     
     return result;
 }
@@ -227,6 +227,7 @@ Let's get started on this task:
        SetOpVectorBag<T> unionWith( SetOpVectorBag<T> rhs );
    };
    ```
+
 2. Now open the `set-op-vector-bag.cpp` source file and implement this method using the skeleton presented in the task discussion above.
 3. When you have completed this task, open the `csc232.h` header file and toggle the `SKIP_TESTING_TASK_2` macro from `TRUE` to `FALSE`.
 4. Build and execute the `test_task2` target to test your solution (or run `ctest`).
@@ -236,7 +237,7 @@ Let's get started on this task:
 
 In this task, we define the `intersectionWith()` operation.
 
-#### Discussion
+#### Discussion of the intersection operation
 
 In this task, we continue to extend the `VectorBag<T>` template class by adding the `intersectionWith()` operation. Let's discuss the use of this operation first.
 
@@ -255,8 +256,8 @@ This is a new method to be added to the `SetOpVectorBag<T>` class declaration. T
 - The operation returns something; since whatever it is returning is getting assigned to an instance of `SetOpVectorBag<T>` (i.e., `c`), we can infer that the return type is `SetOpVectorBag<T>`.
 - The operation is given an argument (i.e., `b`); look at the argument's declaration, we can infer that  the parameter's type is also `SetOpVectorBag<T>`.
 - There are two bags involved in this operation:
-    - The receiver of the message (i.e., `a`)
-    - The argument passed along with this message (i.e., `b`)
+  - The receiver of the message (i.e., `a`)
+  - The argument passed along with this message (i.e., `b`)
 
 The last bullet is notable in that the definition of this operation will access either the receiver's methods or the arguments methods (or both) in order to fulfill the requirements of this method.
 
@@ -287,8 +288,8 @@ SetOpVectorBag<T> SetOpVectorBag<T>::intersectionWith( SetOpVectorBag<T> rhs )
     // Use bag operations to populate result with appropriate values
     // Note: Directly referring to an inherited operation is invoking the
     // receiver object's method, e.g.,
-    // int size = getCurrentSize(); // this is the size of this bag
-    // int otherSize = rhs.getCurrentSize(); // this is the size of the argument
+    // int size = VectorBag<T>::getCurrentSize(); // this is the size of this bag
+    // int otherSize = rhs.getCurrentSize();      // this is the size of the argument
     
     return result;
 }
@@ -310,6 +311,7 @@ Let's get started on this task:
        SetOpVectorBag<T> intersectionWith( SetOpVectorBag<T> rhs );
    };
    ```
+
 2. Now open the `set-op-vector-bag.cpp` source file and implement this method using the skeleton presented in the task discussion above.
 3. When you have completed this task, open the `csc232.h` header file and toggle the `SKIP_TESTING_TASK_3` macro from `TRUE` to `FALSE`.
 4. Build and execute the `test_task3` target to test your solution (or run `ctest`).
@@ -319,7 +321,7 @@ Let's get started on this task:
 
 In this task, we define the `differenceWith()` operation.
 
-#### Discussion
+#### Discussion of the difference operation
 
 In this task, we continue to extend the `VectorBag<T>` template class by adding the `intersectionWith()` operation. Let's discuss the use of this operation first.
 
@@ -338,8 +340,8 @@ This is a new method to be added to the `SetOpVectorBag<T>` class declaration. T
 - The operation returns something; since whatever it is returning is getting assigned to an instance of `SetOpVectorBag<T>` (i.e., `c`), we can infer that the return type is `SetOpVectorBag<T>`.
 - The operation is given an argument (i.e., `b`); look at the argument's declaration, we can infer that  the parameter's type is also `SetOpVectorBag<T>`.
 - There are two bags involved in this operation:
-    - The receiver of the message (i.e., `a`)
-    - The argument passed along with this message (i.e., `b`)
+  - The receiver of the message (i.e., `a`)
+  - The argument passed along with this message (i.e., `b`)
 
 The last bullet is notable in that the definition of this operation will access either the receiver's methods or the arguments methods (or both) in order to fulfill the requirements of this method.
 
@@ -371,8 +373,8 @@ SetOpVectorBag<T> SetOpVectorBag<T>::differenceWith( SetOpVectorBag<T> rhs )
     // Use bag operations to populate result with appropriate values
     // Note: Directly referring to an inherited operation is invoking the
     // receiver object's method, e.g.,
-    // int size = getCurrentSize(); // this is the size of this bag
-    // int otherSize = rhs.getCurrentSize(); // this is the size of the argument
+    // int size = VectorBag<T>::getCurrentSize(); // this is the size of this bag
+    // int otherSize = rhs.getCurrentSize();      // this is the size of the argument
     
     return result;
 }
@@ -395,6 +397,7 @@ Let's get started on this task:
        SetOpVectorBag<T> differenceWith( SetOpVectorBag<T> rhs );
    };
    ```
+
 2. Now open the `set-op-vector-bag.cpp` source file and implement this method using the skeleton presented in the task discussion above.
 3. When you have completed this task, open the `csc232.h` header file and toggle the `SKIP_TESTING_TASK_4` macro from `TRUE` to `FALSE`.
 4. Build and execute the `test_task4` target to test your solution (or run `ctest`).
@@ -404,7 +407,7 @@ Let's get started on this task:
 
 Looking back at the UML Class Diagram at the beginning of this README, we note that each of the classes in the class hierarchy actually appear to be members of the `csc232` namespace. In this task, we make that happen.
 
-#### Discussion
+#### Discussion of namespaces
 
 While unlikely in today's programming exercise, it _is_ possible that we come up with a class name that is common enough that it might clash with another similarly named class pulled in by some dependency in our project. To help mitigate this name clash, we can encapsulate our classes within a namespace. For us, we'll create a namespace named `csc232` to do just that.
 
@@ -441,19 +444,20 @@ Foo bar{ }; // creates an instance of csc232::Foo named bar
 ```
 
 1. Open up the `bag.h` header file and put the `Bag<T>` template class declaration inside a namespace named `csc232`.
-2. Next, do the same thing to the `VectorBag<T>` template class declaration found in `vector-bag.h`. 
+2. Next, do the same thing to the `VectorBag<T>` template class declaration found in `vector-bag.h`.
 3. So that the definitions found in `vector-bag.cpp` are still properly defined, add a `using` clause to the beginning of the file (on a line after the `#include "vector-bag.h"`):
 
    ```c++
    using csc232::VectorBag;
    ```
+
 4. Next, do the same thing to the `SetOpVectorBag<T>` template class declaration found in `set-op-vector-bag.h`.
 5. So that the definitions found in `set-op-vector-bag.cpp` are still properly defined, add a using clause to the beginning of the file (on a line after the `#include "set-op-vector-bag.h"`):
 
    ```c++
    using csc232::SetOpVectorBag;
    ```
-   
+
 6. When you have completed this task, open the `csc232.h` header file and toggle the `SKIP_TESTING_TASK_5` macro from `TRUE` to `FALSE`.
 7. Build and execute the `test_task5` target to test your solution (or run `ctest`).
 8. When all the tests for this task pass, commit and push your changes to GitHub.
