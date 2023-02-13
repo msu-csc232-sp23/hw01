@@ -323,7 +323,7 @@ In this task, we define the `differenceWith()` operation.
 
 #### Discussion of the difference operation
 
-In this task, we continue to extend the `VectorBag<T>` template class by adding the `intersectionWith()` operation. Let's discuss the use of this operation first.
+In this task, we continue to extend the `VectorBag<T>` template class by adding the `differenceWith()` operation. Let's discuss the use of this operation first.
 
 ```c++
 SetOpVectorBag<string> a{ };
